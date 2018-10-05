@@ -11,7 +11,10 @@ if ($mydb->errno != 0)
 
 echo "successfully connected to database".PHP_EOL;
 
-$query = "select * from testTable;";
+$query = "select * from Users;";
+
+
+
 
 $response = $mydb->query($query);
 if ($mydb->errno != 0)
