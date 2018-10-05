@@ -11,7 +11,7 @@ if (isset($argv[1]))
 }
 else
 {
-  $msg = "test message";
+  $msg = "Hello!";
 }
 
 $request = array();
