@@ -1,0 +1,63 @@
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+body{
+	background: 
+		linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+   	
+	text-align:center;
+	font-family: montserrat, arial, verdana;
+}
+
+.main {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+.sub-head {
+    	font-size: 45px;
+    	padding: 40px;
+    	color: white;
+    	text-transform: uppercase;
+    	letter-spacing: 3px;
+}
+.sub-main{
+	position:relative;
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+}
+.sub-main input, .sub-main textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 15px;
+}
+.sub-main input[type="submit"] {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+@media only screen and (min-width : 150px) and (max-width : 900px){
+  .sub-main  {
+    text-align:center;
+    margin:0;
+}

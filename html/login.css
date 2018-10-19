@@ -1,0 +1,70 @@
+body {
+ background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-700356.jpg");
+  margin:0px;
+  background-repeat: no-repeat;
+  
+  font-family: "Times New Roman", Times, serif;
+	
+}
+h2, h3, a {
+  margin:0; padding:0;
+}
+.login-box {
+  margin:0 auto;
+  max-width:500px;
+}
+.login-title {
+  text-align:center;
+  font-size:200%;
+  color:#F0FFFF;
+}
+.login-area h3 {
+  text-align:left;
+  margin-left:40px;
+  color:#FFFAFA;
+}
+
+#textResponse {
+	color:#FFFAFA;
+	font-size:150%;
+	
+}
+.login-area {
+  padding-top:12px;
+  padding-bottom:10%;
+  margin:1% auto;
+  text-align:center;
+}
+.login-area input[type="text"],
+.login-area input[type="password"] {
+  max-width:800px;
+  width: 80%;
+  line-height:2.5em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin:1em 1em;
+  border-radius:10px;
+  padding-left:8px;
+  
+}
+.login-area input[type="submit"] {
+  height:28px;
+  width:100px;
+  opacity: .85; 
+  border:1px solid ;
+  border-radius:20px;
+  text-transform:uppercase;
+  font-family: "Lucida Console", Monaco, monospace;
+  cursor:pointer;
+  font-size: 100%;
+
+  
+}
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 900px){
+  .login-area h3 {
+    text-align:center;
+    margin:0;
+  }
+  
+}
