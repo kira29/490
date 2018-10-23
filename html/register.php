@@ -15,10 +15,11 @@ if(isset($_POST["signup"]))
 </head>
 <body>
 
+<iframe width="0" height="0" src="https://www.youtube.com/embed/DolWl-MqVGA?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <div class="main">
 <h2 class="sub-head">Sign Up</h2>
 <div class="sub-main">
-<form method="POST" action="testRabbitMQRegister.php">
+<form method="POST" action="RabbitMQRegister.php">
 
    
     <input type="text" name="input_user" placeholder="Username" required/>

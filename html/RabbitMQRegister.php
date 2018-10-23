@@ -1,11 +1,11 @@
 #!/usr/bin/php
 <?php
-session_start();
+
 require_once('/home/parth/git/rabbitmqphp_example/path.inc');
 require_once('/home/parth/git/rabbitmqphp_example/get_host_info.inc');
 require_once('/home/parth/git/rabbitmqphp_example/rabbitMQLib.inc');
 
-$client = new rabbitMQClient("/home/parth/git/rabbitmqphp_example/testRabbitMQDB.ini","testServer");
+$client = new rabbitMQClient("/home/parth/git/rabbitmqphp_example/RabbitMQDB.ini","testServer");
 if (isset($argv[1]))
 {
   $msg = $argv[1];
