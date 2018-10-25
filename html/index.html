@@ -27,8 +27,9 @@ function SendLoginRequest(username,password)
 
 
 <body>
+<iframe width="0" height="0" src="https://www.youtube.com/embed/wNURlf0XjKo?autoplay=1&loop=1" auto frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<iframe width="0" height="0" src="https://www.youtube.com/embed/3WGM3rKznUk?start=92&autoplay=1" auto frameborder="0" allow="autoplay"; encrypted-media" allowfullscreen></iframe>
+
 <link href='login.css' rel='stylesheet' type='text/css'>
 <form method="POST" action="RabbitMQLogin.php">
 <div class="login-box">
@@ -38,9 +39,10 @@ function SendLoginRequest(username,password)
   </div>
   <div class="login-area">
     <h3>Username:</h3>
-    <input type="text" name="input_username" placeholder="Username"/><br>
+    <input type="text" name="input_username" placeholder="Username" required /> 
+    <br>
     <h3>Password:</h3>
-    <input type="password" name="input_password" placeholder="Password"/>
+    <input type="password" name="input_password" placeholder="Password" required />
     <br>
     <button type="submit">Login</button>
 </form>

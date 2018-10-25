@@ -2,6 +2,9 @@ body {
  background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-700356.jpg");
   margin:0px;
   background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+background-position: center; 
   
   font-family: "Times New Roman", Times, serif;
 	
@@ -12,6 +15,7 @@ h2, h3, a {
 .login-box {
   margin:0 auto;
   max-width:500px;
+  
 }
 .login-title {
   text-align:center;
