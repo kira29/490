@@ -1,0 +1,10 @@
+[25-Oct-2018 09:19:51 America/New_York] PHP Warning:  parse_ini_file(/home/parth/git/rabbitmqphp_example/RabbitMQDB.ini): failed to open stream: No such file or directory in /home/parth/git/rabbitmqphp_example/get_host_info.inc on line 17
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 154
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 155
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 156
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 157
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 158
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 167
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 168
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: input_user in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 25
+[25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: input_pass in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 26
