@@ -1,5 +1,13 @@
 
 <?php 
+
+//ERROR LOGGING
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('log_errors', TRUE);
+ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
+ini_set('log_errors_max_len', 1024);
+
 if(isset($_POST["signup"]))  
       {  
 	header("location:index.html");

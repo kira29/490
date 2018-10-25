@@ -1,6 +1,14 @@
 #!/usr/bin/php
 <?php
 session_start();
+
+//ERROR LOGGING
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('log_errors', TRUE);
+ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
+ini_set('log_errors_max_len', 1024);
+
 require_once('/home/parth/git/rabbitmqphp_example/path.inc');
 require_once('/home/parth/git/rabbitmqphp_example/get_host_info.inc');
 require_once('/home/parth/git/rabbitmqphp_example/rabbitMQLib.inc');
