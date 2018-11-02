@@ -8,3 +8,15 @@
 [25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: testServer in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 168
 [25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: input_user in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 25
 [25-Oct-2018 09:19:51 America/New_York] PHP Notice:  Undefined index: input_pass in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 26
+[01-Nov-2018 23:23:56 America/New_York] PHP Notice:  Undefined index: input_username in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 26
+[01-Nov-2018 23:23:56 America/New_York] PHP Notice:  Undefined index: input_password in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 27
+[01-Nov-2018 23:23:56 America/New_York] PHP Deprecated:  Function AMQPQueue::declare() is deprecated in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 215
+[01-Nov-2018 23:23:56 America/New_York] PHP Notice:  Undefined index: input_username in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 45
+[01-Nov-2018 23:23:56 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/parth/git/rabbitmqphp_example/get_host_info.inc:28) in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 46
+[01-Nov-2018 23:26:23 America/New_York] PHP Notice:  Undefined index: input_username in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 26
+[01-Nov-2018 23:26:23 America/New_York] PHP Notice:  Undefined index: input_password in /home/parth/git/rabbitmqphp_example/html/RabbitMQLogin.php on line 27
+[01-Nov-2018 23:26:23 America/New_York] PHP Deprecated:  Function AMQPQueue::declare() is deprecated in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 215
+[02-Nov-2018 08:36:49 America/New_York] PHP Notice:  Undefined index: input_user in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 25
+[02-Nov-2018 08:36:49 America/New_York] PHP Notice:  Undefined index: input_pass in /home/parth/git/rabbitmqphp_example/html/RabbitMQRegister.php on line 26
+[02-Nov-2018 08:36:49 America/New_York] PHP Deprecated:  Function AMQPQueue::declare() is deprecated in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 215
+[02-Nov-2018 08:48:48 America/New_York] PHP Deprecated:  Function AMQPQueue::declare() is deprecated in /home/parth/git/rabbitmqphp_example/rabbitMQLib.inc on line 215
