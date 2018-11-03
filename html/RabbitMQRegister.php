@@ -23,7 +23,7 @@ else
 }
 
 $userName = $_POST["input_user"];
-$userPass = $_POST["input_pass"];
+$userPass = password_hash($_POST["input_pass"],PASSWORD_DEFAULT);
 
 //$userName = "parth";
 //$userPass = "parth";
@@ -41,10 +41,5 @@ echo "\n\n";
 
 //echo $argv[0]." END".PHP_EOL;
 
-
-if($response == 1){
-	$_SESSION["username"] = $_POST["input_user"];
-	header("location:index.html");
-}
 ?>
 

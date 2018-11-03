@@ -16,18 +16,24 @@ function doLogin($userName,$passWord)
 	}
 	echo "<br><br>Successfully connected to database".PHP_EOL;
 	//Select username and password from the database 
-	$query = mysqli_query($mydb,"SELECT * FROM users WHERE userName = '$userName' AND passWord = '$passWord'");
+	$query = mysqli_query($mydb,"SELECT * FROM users WHERE userName = '$userName'");
 	$count = mysqli_num_rows($query);
 	//Check if credentials match the database
 	if ($count == 1){
+		$row = mysqli_fetch_array($query,MYSQLI_ASSOC);
+		if (password_verify($passWord, $row['passWord'])){
 		//Match	
 		echo "<br><br>USERS CREDENTIALS VERIFIED";
 		return true;
-	}else{
+		}else{
 		//No Match
 		echo "<br><br>WHO THE FUCK ARE YOU";
 		return false;
+		}
+	}else{
+		echo "<br><br> Username or Password not found";
 	}
+
 	
 	//$response = $mydb->query($query);
 	if ($mydb->errno !=0){
