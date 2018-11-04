@@ -1,5 +1,5 @@
 body {
- background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-700356.jpg");
+ background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-708677.png");
   margin:0px;
   background-repeat: no-repeat;
  background-attachment: fixed;
@@ -42,13 +42,15 @@ h2, h3, a {
 .login-area input[type="text"],
 .login-area input[type="password"] {
   max-width:800px;
-  width: 80%;
+background: rgba(255,255,255,0.4);
+  width: 65%;
   line-height:2.5em;
   font-family: "Comic Sans MS", cursive, sans-serif;
   margin:1em 1em;
-  border-radius:10px;
+color: white;
   padding-left:8px;
-  
+
+
 }
 .login-area input[type="submit"] {
   height:28px;

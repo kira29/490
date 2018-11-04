@@ -20,11 +20,14 @@ if (isset($argv[1]))
 }
 else
 {
-  $msg = "Testing login";
+  $msg = "Login Request";
 }
 
 $userName = $_POST["input_username"];
 $userPass = $_POST["input_password"];
+
+//$userName = "IT490";
+//$userPass = "IT490";
 
 $request = array();
 $request['type'] = "login";
@@ -38,11 +41,14 @@ echo "Client received respone  ".PHP_EOL;
 print_r($response);
 echo "\n\n";
 
-//echo $argv[0]." END".PHP_EOL;
+echo $argv[0]." END".PHP_EOL;
 
 
 if($response == 1){
 	$_SESSION["username"] = $_POST["input_username"];
 	header("location:loginsuccess.php");
+}
+else {
+	header("location:wronguser.php");
 }
 ?>

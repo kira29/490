@@ -3,7 +3,7 @@
 
 body{
 	
-	background-image: url("https://i.imgur.com/mN5aPE1.jpg");
+	background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-703180.jpg");
 	background-size: cover;
 	//background:linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
    	
@@ -26,10 +26,9 @@ body{
 }
 .sub-main{
 	position:relative;
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	//background: white;
+	
+	
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
@@ -37,18 +36,23 @@ body{
 }
 .sub-main input, .sub-main textarea {
 	padding: 15px;
-	border: 1px solid #ccc;
+	background-color: transparent;
 	border-radius: 3px;
 	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;
-	color: #2C3E50;
-	font-size: 15px;
+	color: white;
+	font-size: 20px;
+font-weight: bold;
+border: none;
+
 }
+
 .sub-main input[type="submit"] {
 	width: 100px;
 	background: #27AE60;
+
 	font-weight: bold;
 	color: white;
 	border: 0 none;
