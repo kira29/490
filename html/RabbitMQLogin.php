@@ -23,11 +23,9 @@ else
   $msg = "Login Request";
 }
 
+
 $userName = $_POST["input_username"];
 $userPass = $_POST["input_password"];
-
-//$userName = "IT490";
-//$userPass = "IT490";
 
 $request = array();
 $request['type'] = "login";
@@ -46,9 +44,9 @@ echo $argv[0]." END".PHP_EOL;
 
 if($response == 1){
 	$_SESSION["username"] = $_POST["input_username"];
-	header("location:loginsuccess.php");
+	header("Location:loginsuccess.php");
+}else{
+	header("Location:wronguser.php");
 }
-else {
-	header("location:wronguser.php");
-}
+
 ?>
