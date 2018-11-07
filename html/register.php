@@ -18,23 +18,33 @@ ini_set('log_errors_max_len', 1024);
 </head>
 <body>
 
-<iframe width="0" height="0" src="https://www.youtube.com/embed/DolWl-MqVGA?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<div class="main">
-<h2 class="sub-head">Sign Up</h2>
-<div class="sub-main">
-<form method="POST" action="RabbitMQRegister.php">
 
-   
-    <input type="text" name="input_user" placeholder="Username" required/>
-    <input type="password" name="input_pass" placeholder="Password" required />
-    
-    <input type="submit" name="signup" value="Sign up">
-  
 
-			</form>
-		</div>
-		
-</div>
+<?php 
 
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up Page</title>
+
+</head>
+<body>
+
+<form action="/phpBB3/ucp.php?mode=login" method="post">
+    <h3><a href="/phpBB3/ucp.php?mode=login">Login</a>&nbsp; &bull; &nbsp; <a href="/phpBB3/ucp.php?mode=register">Register</a></h3>
+    <fieldset>
+        <label for="username">Username:</label>&nbsp;
+        <input type="text" name="username" id="username" size="10" title="Username" />
+        <label for="password">Password:</label>&nbsp;
+        <input type="password" name="password" id="password" size="10" title="Password" />
+        <input type="submit" name="login" value="Login" />
+    </fieldset>
+</form>
+
+</body>
+</html>
 </body>
 </html>

@@ -8,7 +8,7 @@ function doLogin($userName,$passWord)
 {
      // lookup username in databas
     	//Connect to DB
-	$mydb = new mysqli('127.0.0.1','root','parth','test');
+	$mydb = new mysqli('127.0.0.1','root','root','IT490');
 	
 	if ($mydb->errno != 0){
 		echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
@@ -16,12 +16,12 @@ function doLogin($userName,$passWord)
 	}
 	echo "<br><br>Successfully connected to database".PHP_EOL;
 	//Select username and password from the database 
-	$query = mysqli_query($mydb,"SELECT * FROM users WHERE userName = '$userName'");
+	$query = mysqli_query($mydb,"SELECT * FROM users WHERE username = '$userName'");
 	$count = mysqli_num_rows($query);
 	//Check if credentials match the database
 	if ($count == 1){
 		$row = mysqli_fetch_array($query,MYSQLI_ASSOC);
-		if (password_verify($passWord, $row['passWord'])){
+		if (password_verify($passWord, $row['password'])){
 		//Match	
 		echo "<br><br>USERS CREDENTIALS VERIFIED";
 		return true;
@@ -47,14 +47,14 @@ function doRegister($userName,$userPass)
 {
         //lookup username in database
 	//Connect to DB
-        $mydb = new mysqli('127.0.0.1','root','parth','test');
+        $mydb = new mysqli('127.0.0.1','root','root','IT490');
         if ($mydb->errno != 0){
                 echo "<br><br>Failed to connect to database: ".$mydb->error.PHP_EOL;
                 exit(0);
         }
         echo "<br><br>Successfully connected to database".PHP_EOL;
 	//Check is user already exists
-        $query = mysqli_query($mydb,"SELECT * FROM users WHERE userName = '$userName' ");
+        $query = mysqli_query($mydb,"SELECT * FROM users WHERE username = '$userName' ");
         $count = mysqli_num_rows($query);
 	//Check if credentials match the database....if there is a match then the user already has an account 
         if ($count == 1){
@@ -65,7 +65,7 @@ function doRegister($userName,$userPass)
 		//Create new user account if its unique 
 	        $query2 = mysqli_query($mydb,"INSERT INTO users VALUES (NULL,'$userName', '$userPass')");
                 echo "<br><br>ACCOUNT HAS BEEN MADE";
-                //return false;
+                return false;
         }
         if ($mydb->errno !=0){
                 echo "<br><br>Failed to execute query: ".PHP_EOL;

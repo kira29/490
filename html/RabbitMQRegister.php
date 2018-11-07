@@ -39,7 +39,16 @@ echo "Client received respone  ".PHP_EOL;
 print_r($response);
 echo "\n\n";
 
-//echo $argv[0]." END".PHP_EOL;
+echo $argv[0]." END".PHP_EOL;
+
+if(!$response == true){
+	
+	header("Location:index.html");
+
+}else{
+	header("Location:register.html");
+}
+
 
 ?>
 

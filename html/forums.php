@@ -64,13 +64,11 @@ padding-right : 50px;
 
 <div class="container">
   
-  <p>Welcome to Movie Buddies!!</p>
-<p>Search for any Movie/TV Shows in the search bar below for movie-related forum.</p>
+  <p>Welcome to Forums</p>
 
-<form action="searchAPI.php" method="POST">
-<input id="search" name="search" type="text" placeholder="Type here">
-<input id="submit" type="submit" value="Search">
-</form>
+
+
 </div>
 </body>
 </html>
+
