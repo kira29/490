@@ -12,6 +12,8 @@ ini_set('log_errors_max_len', 1024);
 $username = $_SESSION["username"];
 
 
+
+
 ?>
 
 
@@ -44,7 +46,12 @@ padding-right : 50px;
    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
       
       <a class="navbar-brand">Hi <?= $username?></a>
-       <a class="navbar-brand"> Kehoes Bros </a>
+          <div class="mx-auto order-0">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
     
         <ul class="navbar-nav ml-md-auto d-md-flex">
           <li class="nav-item">
@@ -60,13 +67,30 @@ padding-right : 50px;
         </ul>
       
     </nav>
-           
+
+
+
+   
+
+
+
+
+
+
+
+
+
 
 <div class="container">
   
   <p>Welcome to Forums</p>
 
 
+echo '<table border="1">
+              <tr>
+                <th>Category</th>
+                <th>Last topic</th>
+              </tr>'; 
 
 </div>
 </body>
