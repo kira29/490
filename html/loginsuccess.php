@@ -10,6 +10,7 @@ ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
 ini_set('log_errors_max_len', 1024);
 
 $username = $_SESSION["username"];
+
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +64,7 @@ padding-right : 50px;
   <p>Welcome to Movie Buddies!!</p>
 <p>Search for any Movie/TV Shows in the search bar below for movie-related forum.</p>
     
- <form method="POST">
+ <form method="POST" action="">
       <input type="text" name="search" placeholder="Type Title Here" required>
       <button type="submit">Search</button>
     </form>
@@ -71,11 +72,18 @@ padding-right : 50px;
 
 
 
-</table>
-</div>
+<table class="table table-bordered">
+ <thead>
+ <tr>
+ <th>Movie Title</th>
+ <th>Poster</th>
+ <th>Release Date</th>
+<th>Forums</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
 
-</body>
-</html>
 
 <?php
 
@@ -83,7 +91,7 @@ padding-right : 50px;
 $search_input = $_POST['search'];
 //Username obtained from user login using post
 //$username = $username ; //not set up atm
-echo nl2br("\n\n ");
+echo nl2br("\n ");
 
 if (isset($_POST['search']) && !empty($_POST['search'])){
 
@@ -96,64 +104,56 @@ if (isset($_POST['search']) && !empty($_POST['search'])){
 	//Set results to var
 	$curl_results = curl_exec($ch);
         curl_close($ch);
-}else{
-//	echo nl2br("Why are you here then?\n");
-	exit();
 
 }
 $jsonarray = json_decode($curl_results, true); //convert json into multidimensional associative array
 //Iterate through the array 'results' and assign a variable to each type that we want
 
-echo "<table border = '2'>";
 foreach($jsonarray['results'] as $variable){
       
 	$title = $variable['title'];
         if (is_null($title)){
-              $title = $title . 'NULL';
+             $title = $title ."Title not found";
         }
-
-
-	echo "<tr>";
-	echo "<td>";
-	echo "<th>";
-	       	echo nl2br("Title : <strong>". $title." </strong>\n") ;
       
-        
-        $releasedate =  $variable['release_date'];
+        echo"<td>".$title."</td>"; 
+	
+	$releasedate =  $variable['release_date'];
         if (is_null($releasedate)){
-                $releasedate = $releasedate . 'NULL';
+                $releasedate = $releasedate . "Release date not found";
         }
-//        echo nl2br('RELEASE DATE: ' . $releasedate . "\n");
+
         $posterpath = $variable['poster_path'];
         if (is_null($posterpath)){
-                $posterpath = $posterpath . 'NULL';
+                $posterpath = $posterpath . "Poster not found";
         }
-	//echo nl2br('POSTER PATH: ' . 'https://image.tmdb.org/t/p/w500' . $posterpath . "\n\n");
+
 	//Get image path and base64 encode it so that it may be displayed
 	$image = 'https://image.tmdb.org/t/p/w300' . $posterpath;
 	$imagedata = base64_encode(file_get_contents($image));
-	//Display image
+	//Display image	
+
+	$linkImage =" <img src=\"".$image."\">";
+
+
+	echo"<td>".$linkImage."</td>";
+	echo"<td>".$releasedate."</td>";
+	echo"<td>Click here to add a forum for movie</td>";
+//	echo nl2br("\n\n");
+
 	
-	echo "<img src=\"".$image."\">";
-	echo nl2br("\n\n");
-  //      echo nl2br("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n");
+	echo "</tr>";
 
 
+		
              
 
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
+</table>
+</div>
+</body>
+</html>
 
 

@@ -83,14 +83,9 @@ padding-right : 50px;
 
 <div class="container">
   
-  <p>Welcome to Forums</p>
+ <h2> <p>Welcome to Forums</p> </h2>
 
 
-echo '<table border="1">
-              <tr>
-                <th>Category</th>
-                <th>Last topic</th>
-              </tr>'; 
 
 </div>
 </body>

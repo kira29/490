@@ -46,7 +46,7 @@ if(!$response == true){
 	header("Location:index.html");
 
 }else{
-	header("Location:register.html");
+	header("Location:regwrong.php");
 }
 
 
