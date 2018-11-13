@@ -29,8 +29,8 @@ foreach($jsonarray['results'] as $variable){
         if (is_null($title)){
                 $title = $title . 'NULL';
         }
-        echo nl2br('TITLE: ' . $title . "\n");
-	
+        //echo nl2br('TITLE: ' . $title . "\n");
+echo '<a id = "anchorID" href="forumtest.php">  '. $title . ' </a>';	
         $overview =  $variable['overview'];
         if (is_null($overview)){
                 $overview = $overview . 'NULL';

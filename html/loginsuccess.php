@@ -63,7 +63,9 @@ padding-right : 50px;
 <div class="container">
   
   <p>Welcome to Movie Buddies!!</p>
-<p>Search for any Movie/TV Shows in the search bar below for movie-related forum.</p>
+<p>Search for any Movie/TV Shows in the search bar below.</p>
+<p>Click on title of the Movie/TV show to create a forum </p>
+<p>Then click on forums to see all the forums created by different users and their comments </p>
     
  <form method="POST" action="">
       <input type="text" name="search" placeholder="Type Title Here" required>
@@ -79,7 +81,6 @@ padding-right : 50px;
  <th>Movie Title</th>
  <th>Poster</th>
  <th>Release Date</th>
-<th>Forums</th>
  </tr>
  </thead>
  <tbody>
@@ -111,14 +112,15 @@ $jsonarray = json_decode($curl_results, true); //convert json into multidimensio
 //Iterate through the array 'results' and assign a variable to each type that we want
 
 foreach($jsonarray['results'] as $variable){
-      
+	      
 	$title = $variable['title'];
         if (is_null($title)){
              $title = $title ."Title not found";
         }
       
-        echo"<td>".$title."</td>"; 
-	
+        //echo"<td>".$title."</td>"; 
+	echo '<td><a id = "anchorID" href="forumstest.php">  '. $title . '</td> </a>';
+	$_SESSION['title'] = $title;
 	$releasedate =  $variable['release_date'];
         if (is_null($releasedate)){
                 $releasedate = $releasedate . "Release date not found";
@@ -139,7 +141,7 @@ foreach($jsonarray['results'] as $variable){
 
 	echo"<td>".$linkImage."</td>";
 	echo"<td>".$releasedate."</td>";
-	echo"<td>Click here to add a forum for movie</td>";
+
 //	echo nl2br("\n\n");
 
 	

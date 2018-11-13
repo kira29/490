@@ -4,13 +4,18 @@ session_start();
 
 //ERROR LOGGING
 error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+ini_set('display_errors', FALSE);
 ini_set('log_errors', TRUE);
 ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
 ini_set('log_errors_max_len', 1024);
 
 $username = $_SESSION["username"];
-
+$mydb = new mysqli('127.0.0.1','root','root','IT490');
+if ($mydb->errno != 0){
+	echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
+	exit(0);
+}
+$query = mysqli_query($mydb,"SELECT * FROM fquestions ORDER BY id ASC");
 
 
 
@@ -85,10 +90,39 @@ padding-right : 50px;
   
  <h2> <p>Welcome to Forums</p> </h2>
 
+<table width="90%" border="1" align="center" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
+<tr>
+<td width="6%" align="center" bgcolor="#E6E6E6"><strong>#</strong></td>
+<td width="53%" align="center" bgcolor="#E6E6E6"><strong>Topic</strong></td>
+<td width="15%" align="center" bgcolor="#E6E6E6"><strong>Views</strong></td>
+<td width="13%" align="center" bgcolor="#E6E6E6"><strong>Replies</strong></td>
+<td width="13%" align="center" bgcolor="#E6E6E6"><strong>Date/Time</strong></td>
+</tr>
 
+<?php
+// Start looping table row
+while($rows = mysqli_fetch_array($query)){
+?>
+<tr>
+<td bgcolor="#FFFFFF"><?php echo $rows['id']; ?></td>
+<td bgcolor="#FFFFFF"><a href="view_topic.php?id=<?php echo $rows['id']; ?>"><?php echo $rows['topic']; ?></a><BR></td>
+<td align="center" bgcolor="#FFFFFF"><?php echo $rows['view']; ?></td>
+<td align="center" bgcolor="#FFFFFF"><?php echo $rows['reply']; ?></td>
+<td align="center" bgcolor="#FFFFFF"><?php echo $rows['datetime']; ?></td>
+</tr>
+
+<?php
+// Exit looping and close connection
+}
+mysqli_close();
+?>
+
+<tr>
+<td colspan="5" align="right" bgcolor="#E6E6E6"><a href="new_topic.php"><strong>Create New Topic</strong> </a></td>
+</tr>
+</table>
 
 </div>
 </body>
 </html>
-<script id="cid0020000203039478046" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 400px;height: 400px;">{"handle":"moviebuddychatroom","arch":"js","styles":{"a":"33cc00","b":100,"c":"FFFFFF","d":"FFFFFF","k":"33cc00","l":"33cc00","m":"33cc00","n":"FFFFFF","p":"10","q":"33cc00","r":100,"pos":"br","cv":1,"cvbg":"33cc00","cvw":75,"cvh":30}}</script>
 
