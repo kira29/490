@@ -7,7 +7,12 @@ if ($mydb->errno != 0){
 }
 //Javascript get hyperlink name for title in new post....WIP
 //$topictest "<script>document.write(myAnchor);</script>";
-$topic = $_SESSION["title"]; //how to get this to change?
+if(isset($_COOKIE['title'])){
+	$topic = $_COOKIE['title'];
+}
+
+
+//$topic = $_SESSION["title"]; //how to get this to change?
 $detail = 'Discuss this movie!';
 $username = $_SESSION["username"];
 $datetime = date("d/m/y h:i:s"); //create date time

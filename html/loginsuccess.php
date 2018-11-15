@@ -112,14 +112,14 @@ $jsonarray = json_decode($curl_results, true); //convert json into multidimensio
 //Iterate through the array 'results' and assign a variable to each type that we want
 
 foreach($jsonarray['results'] as $variable){
-	      
+	  $movieid = $variable['id'];    
 	$title = $variable['title'];
         if (is_null($title)){
              $title = $title ."Title not found";
         }
-      
+      echo '<td><a button name = "' .$title.'" onclick ="getText(this)" id = "'.$movieid.'" href = "forumstest.php" >  '. $title . ' </a></td>';
         //echo"<td>".$title."</td>"; 
-	echo '<td><a id = "anchorID" href="forumstest.php">  '. $title . '</td> </a>';
+	//echo '<td><a id = "anchorID" href="forumstest.php">  '. $title . '</td> </a>';
 	$_SESSION['title'] = $title;
 	$releasedate =  $variable['release_date'];
         if (is_null($releasedate)){
@@ -158,6 +158,19 @@ foreach($jsonarray['results'] as $variable){
 </div>
 </body>
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+//Get text from whatever link that is clicked and set a cookie so it may be passed to forumtest.php
+function getText(obj){
+	var t = $(obj).text();
+	document.cookie = "title="+t;
+	console.info(t);	
+}
+</script>
+
+
 
 <script id="cid0020000203039478046" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 400px;height: 400px;">{"handle":"moviebuddychatroom","arch":"js","styles":{"a":"33cc00","b":100,"c":"FFFFFF","d":"FFFFFF","k":"33cc00","l":"33cc00","m":"33cc00","n":"FFFFFF","p":"10","q":"33cc00","r":100,"pos":"br","cv":1,"cvbg":"33cc00","cvw":75,"cvh":30}}</script>
 
