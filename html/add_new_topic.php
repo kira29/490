@@ -2,7 +2,7 @@
 session_start();
 ini_set("display_errors",1);
 error_reporting(E_ALL);
-$mydb = new mysqli('127.0.0.1','root','root','IT490');
+$mydb = new mysqli('192.168.1.4','newuser','4321password','myforum');
 if ($mydb->errno != 0){
         echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
         exit(0);

@@ -23,7 +23,7 @@ else
 }
 
 $userName = $_POST["input_user"];
-$userPass = password_hash($_POST["input_pass"],PASSWORD_DEFAULT);
+$userPass = $_POST["input_pass"];
 
 //$userName = "parth";
 //$userPass = "parth";
@@ -41,7 +41,7 @@ echo "\n\n";
 
 echo $argv[0]." END".PHP_EOL;
 
-if(!$response == true){
+if($response == true){
 	
 	header("Location:index.html");
 

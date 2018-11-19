@@ -10,7 +10,7 @@ ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
 ini_set('log_errors_max_len', 1024);
 
 $username = $_SESSION["username"];
-$mydb = new mysqli('127.0.0.1','root','root','IT490');
+$mydb = new mysqli('192.168.1.4','newuser','4321password','myforum');
 if ($mydb->errno != 0){
 	echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
 	exit(0);

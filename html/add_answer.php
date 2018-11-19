@@ -1,5 +1,5 @@
 <?php
-$mydb = new mysqli('127.0.0.1','root','root','IT490');
+$mydb = new mysqli('192.168.1.4','newuser','4321password','myforum');
 if ($mydb->errno != 0){
         echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
         exit(0);
@@ -16,12 +16,17 @@ if ($rows) {
 $Max_id = $rows['Maxa_id']+1;
 }
 else {
-$Max_id = 1;
+$Max_id = 0;
 }
 // get values that sent from form 
 $a_name=$_POST['a_name'];
 $a_answer=$_POST['a_answer']; 
-$datetime=date("d/m/y H:i:s"); 
+$datetime=date("d/m/y H:i:s");
+
+echo $a_name;
+echo $a_answer;
+echo $datetime;
+
 // Insert answer 
 $sql2 = mysqli_query($mydb, "INSERT INTO fanswer VALUES ('$id', '$Max_id', '$a_name', '$a_answer', '$datetime')");
 if($sql2){
