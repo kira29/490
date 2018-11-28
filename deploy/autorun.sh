@@ -1,5 +1,5 @@
 #/bin/bash
 
 
-php /home/roydem/database/rabbitMQErrorListener.php &
-php /home/roydem/database/rabbitMQServer.php &
+#php /home/parth/git/rabbitMQErrorListener.php &
+php /home/parth/git/testRabbitMQServer.php &

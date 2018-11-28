@@ -4,14 +4,14 @@
 backup_files="/home/parth/git"
 
 # Where to backup to.
-dest="/home/parth/git/backup"
-
+dest="/home/parth/backups"
+#noooo
 # version_num= $1
 # version_n=$1
 
 # Create archive filename.
 current_time=$(date +%m-%d-%Y_%H-%M-%S)
-archive_file="database-backup-$current_time.tgz"
+archive_file="bundle-$current_time.tgz"
 
 # Print start status message.
 echo "Backing up $backup_files to $dest/$archive_file"
@@ -28,10 +28,10 @@ date
 echo
 
 # SCP the tar that was just made to the deploy server 
-scp /home/parth/git/backup* roydem@192.168.1.184:/home/parth/git/scp
+scp /home/parth/backups/* parth@192.168.1.186:/var/temp
 
 #delete local copy once tar has reached server
-rm -r /home/parth/git/backup/*
+rm -r /home/parth/backups/*
 
 # Long listing of files in $dest to check file sizes.
-ls -lh $dest
+#ls -lh $dest

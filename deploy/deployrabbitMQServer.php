@@ -54,7 +54,7 @@ function doBundle ($type,$package,$tier,$packageName,$version){
 	echo "SCP INITIATED... ";
 	echo "TAR FILE RECEIVED!";
 
-	$mydb = new mysqli('127.0.0.1','test','4321password','test');
+	$mydb = new mysqli('127.0.0.1','root','root','IT490');
 
         if ($mydb->errno != 0){
 

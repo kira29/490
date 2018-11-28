@@ -1,5 +1,5 @@
 #/bin/bash
 
-pkill -f rabbitMQServer.php
+pkill -f testRabbitMQServer.php
 
-pkill -f rabbitMQErrorListener.php
+#pkill -f rabbitMQErrorListener.php

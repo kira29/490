@@ -8,9 +8,10 @@ require_once('/home/parth/git/rabbitMQLib.inc');
 #execute script to make a tar file of database
 exec('./backuptest.sh ');
 
+exec('./installbundle.sh');
 
 #Increment version number
-$mydb = new mysqli('192.168.1.184','root','root','IT490');
+$mydb = new mysqli('192.168.1.186','root','root','IT490');
 if ($mydb->errno != 0){
 	echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
 	exit(0);
