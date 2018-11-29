@@ -67,9 +67,10 @@ echo "\n";
 
 
 #rename the generated tar file
-rename("/home/parth/backups/backup.tgz","/home/roydem/backups/".$request['packageName']."-".$request['version'].".tgz");
+rename("/home/parth/backups/backup.tgz","/home/parth/backups/".$request['packageName']."-".$request['version'].".tgz");
+
 #This script scps the file, then deletes it
-exec('./scp_tar.sh ');
+exec('./scp_tar.sh');
 
 
 ?>

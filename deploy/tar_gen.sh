@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # What to backup.
-backup_files="/home/parth/git"
+backup_files="/home/parth/git/html/"
 
 # Where to backup to.
 dest="/home/parth/backups"
@@ -21,7 +21,7 @@ date
 echo
 
 # Backup the files using tar.
-tar czf $dest/$archive_file --absolute-names $backup_files
+tar -zcvf $dest/$archive_file --absolute-names $backup_files
 
 # Print end status message.
 echo
