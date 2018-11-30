@@ -21,7 +21,8 @@ date
 echo
 
 # Backup the files using tar.
-tar -zcvf $dest/$archive_file --absolute-names $backup_files
+tar czf $dest/$archive_file -C /home/parth/git/html/ .
+#tar -zcvf $dest/$archive_file --absolute-names $backup_files
 
 # Print end status message.
 echo

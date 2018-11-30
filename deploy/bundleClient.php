@@ -21,7 +21,7 @@ if ($mydb->errno != 0){
 }
 
 #Variables that can be set......
-$type = 	readline("Enter Type: ");		#IE.. bundle
+#$type = 	readline("Enter Type: ");		#IE.. bundle
 $package = 	readline("Enter Package: ");		#IE.. backend
 $tier = 	readline("Enter Tier: ");		#IE.. QA
 $packageName =	readline("Enter PackageName: ");	#IE.. filename
@@ -56,7 +56,7 @@ if ($count){
 
 $client = new rabbitMQClient("deployclientrabbitMQServer.ini","testServer");
 $request = array();
-$request['type'] = $type;
+$request['type'] = "bundle";
 $request['package'] = $package;
 $request['tier'] = $tier;
 $request['packageName'] = $packageName;
