@@ -5,7 +5,7 @@ require_once('/home/parth/git/path.inc');
 require_once('/home/parth/git/get_host_info.inc');
 require_once('/home/parth/git/rabbitMQLib.inc');
 
-function doRollback ($type,$package,$tier,$packageName){
+function doRollback ($type,$package,$tier,$packageName,$version,$rollbackVersion){
 
         echo "Rollback Request received" . PHP_EOL;
         echo "TYPE: " . $type . PHP_EOL;
@@ -13,7 +13,18 @@ function doRollback ($type,$package,$tier,$packageName){
         echo "TIER: " . $tier . PHP_EOL;
         echo "PACKAGE NAME: " . $packageName . PHP_EOL;
 
+	$mydb = new mysqli('127.0.0.1','root','root','IT490');
+	if ($mydb->errno != 0){
+                echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
+                exit(0);
+        }	
 	
+	 $query = mysqli_query($mydb, "SELECT * Builds WHERE VALUES('$packageName','$rollbackVersion')");
+	echo "Previous version found! Rolling back!" . PHP_EOL; 
+	$sourcefile = "/var/temp/" . $packageName . "-" . $version . ".tgz";
+	echo "FILEPATH: " . $sourcefile . PHP_EOL;
+	$sourcefile = escapeshellarg($sourcefile);
+        $output = exec("./rollback.sh $sourcefile");
 
 }
 
@@ -90,7 +101,7 @@ function requestProcessor($request)
   switch ($request['type'])
   {
     case "rollback":
-      return doRollback($request['type'],$request['package'],$request['tier'],$request['packageName']);
+      return doRollback($request['type'],$request['package'],$request['tier'],$request['packageName'],$request['version'],$request['rollbackversion']);
     case "update":
       return doUpdate($request['type'],$request['package'],$request['tier'],$request['packageName']);
     case "deploy":
