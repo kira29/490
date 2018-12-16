@@ -4,12 +4,12 @@ require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
-$filename = '/home/parth/git/rabbitmqphp_example/logging/feLog.txt';
+$filename = '/home/parth/git/logging/feLog.txt';
 
 //Open dbLog file and append contents to an array
 if (file_exists($filename)){
 	echo "This file $filename exists"."<br>";
-	$file = fopen("/home/parth/git/rabbitmqphp_example/logging/feLog.txt","r");
+	$file = fopen("/home/parth/git/logging/feLog.txt","r");
 	$errorArray = [];
 
 while(! feof($file)){
@@ -23,7 +23,7 @@ $request['type'] = "frontend";
 $request['error_string'] = $errorArray;
 $returnedValue = createClientForRmq($request);
 //Append contents to a history file that will not be deleted after sending
-$fp = fopen("/home/parth/git/rabbitmqphp_example/logging/feLog.txt", "a");
+$fp = fopen("/home/parth/git/logging/feLog.txt", "a");
 for($i = 0; $i < count($errorArray); $i++){
         fwrite($fp, $errorArray[$i]);
 }
