@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # What to backup.
-backup_files="/home/parth/git/html/"
+backup_files="/home/parth/Downloads/backuptml"
 
 # Where to backup to.
 dest="/home/parth/backups"
@@ -21,7 +21,7 @@ date
 echo
 
 # Backup the files using tar.
-tar czf $dest/$archive_file -C /home/parth/git/html/ .
+tar czf $dest/$archive_file -C /home/parth/Downloads/backuptml .
 #tar -zcvf $dest/$archive_file --absolute-names $backup_files
 
 # Print end status message.
@@ -33,8 +33,5 @@ echo
 
 # Long listing of files in $dest to check file sizes.
 ls -lh $dest
-
-
-
 
 

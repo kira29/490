@@ -1,10 +1,5 @@
 #!/usr/bin/php
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('log_errors', TRUE);
-ini_set('error_log', '/home/parth/git/rabbitmqphp_example/logging/feLog.txt');
-ini_set('log_errors_max_len', 1024);
 
 require_once('/home/parth/git/path.inc');
 require_once('/home/parth/git/get_host_info.inc');
@@ -15,7 +10,7 @@ exec('./tar_gen.sh ');
 #exec('./backuptest.sh ');
 #exec('./installbundle.sh');
 #Increment version number
-$mydb = new mysqli('192.168.1.7','test','4321password','test');
+$mydb = new mysqli('192.168.1.4','test','4321password','test');
 if ($mydb->errno != 0){
 	echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
 	exit(0);
@@ -25,9 +20,13 @@ $type = 	readline("Enter Type: ");		#IE.. bundle
 $package = 	readline("Enter Package: ");		#IE.. backend
 $tier = 	readline("Enter Tier: ");		#IE.. QA
 $packageName =	readline("Enter PackageName: ");	#IE.. filename
+
 if ($type == 'rollback'){
 	$rollbackVersion = readline("Enter version to rollback to: ");
 }
+
+
+
 #Starting Version Number
 $increment_value = "1";
 //get last version number
@@ -62,6 +61,9 @@ if ($type == 'rollback'){
 		echo "File Found! Rolling back!";
 	}
 }
+
+
+
 $client = new rabbitMQClient("deployclientrabbitMQServer.ini","testServer");
 $request = array();
 $request['type'] = $type;
@@ -86,4 +88,5 @@ rename("/home/parth/backups/backup.tgz","/home/parth/backups/".$request['package
 #This script scps the file, then deletes it
 exec('./scp_tar.sh');
 }
+
 ?>
