@@ -10,7 +10,7 @@ exec('./tar_gen.sh ');
 #exec('./backuptest.sh ');
 #exec('./installbundle.sh');
 #Increment version number
-$mydb = new mysqli('192.168.1.4','test','4321password','test');
+$mydb = new mysqli('192.168.1.11','user','password','deploy');
 if ($mydb->errno != 0){
 	echo "Failed to connect to database: ".$mydb->error.PHP_EOL;
 	exit(0);
